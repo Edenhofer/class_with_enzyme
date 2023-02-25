@@ -18,9 +18,7 @@ vpath .base build
 ########################################################
 
 # your C compiler:
-CC       = gcc
-#CC       = icc
-#CC       = pgcc
+CC       ?= $(PWD)/../llvm-14/build-omp/bin/clang
 
 # your tool for creating static libraries:
 AR        = ar rv
@@ -35,7 +33,6 @@ PYTHON ?= python
 # your optimization flag
 OPTFLAG = -O3
 #OPTFLAG = -Ofast -ffast-math #-march=native
-#OPTFLAG = -fast
 
 # your openmp flag (comment for compiling without openmp)
 OMPFLAG   = -fopenmp
